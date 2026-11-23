@@ -7,7 +7,7 @@
 
 > **"Learn It. Play It. Master It."**
 
-**DSA Quest** is a complete, interactive, responsive gamified educational platform built to help college students, beginners, and technical job seekers master Data Structures and Algorithms. Through 8 major thematic realms, step-by-step memory visualizers, arcade mini-games, university exam preparation (2M, 5M, 10M model answers), and FAANG interview simulations, DSA Quest transforms abstract computing logic into an engaging, playable RPG experience.
+**DSA Quest** is a complete, interactive, responsive gamified educational platform built to help college students, beginners, and technical job seekers master Data Structures and Algorithms. Through 8 major thematic realms plus a bonus Algorithm Arena, step-by-step memory visualizers, arcade mini-games, university exam preparation (2M, 5M, 10M model answers), and FAANG interview simulations, DSA Quest transforms abstract computing logic into an engaging, playable RPG experience.
 
 ---
 
@@ -59,106 +59,155 @@ DSA QUEST APPLICATION
 ## 🌟 Detailed Feature Breakdown
 
 ### 1. 🗺️ The 8 Major DSA Worlds + Algorithm Arena
-- **World 1: Array Kingdom** – Contiguous memory allocation, random access $O(1)$, element shifting on insertion/deletion, array traversal, and 2D row-major addressing $\text{Addr}(i, j) = \text{Base} + (i \times C + j) \times \text{Size}$.
-- **World 2: Linked List Land** – Node pointers, Singly, Doubly, and Circular Linked Lists, $O(1)$ head insertions, $O(n)$ traversals, and 3-pointer in-place reversal (`prev`, `curr`, `next`).
-- **World 3: Stack & Queue Dungeon** – LIFO stacks, push/pop/peek operations, stack overflow/underflow, Infix-to-Postfix conversion (Dijkstra's Shunting-Yard algorithm), postfix expression evaluation, FIFO queues, circular modulo wrapping $(rear+1)\%m$, and Double-Ended Queues (Deques).
-- **World 4: Recursion & Backtracking** – Base conditions, call stack frame unwinding, exponential recurrence $T(n) = 2T(n-1) + 1$, Tower of Hanoi puzzle, and N-Queens constraint pruning.
-- **World 5: Sorting Speedway** – Elementary sorts ($O(n^2)$ Bubble, Selection, Insertion) vs divide-and-conquer ($O(n \log n)$ Merge Sort and Quick Sort with Lomuto partitioning).
-- **World 6: Searching & Hashing City** – Binary search interval halving, hash functions, load factor ($\alpha = n/m$), Separate Chaining, and Open Addressing (Linear Probing, Quadratic Probing, Double Hashing).
-- **World 7: Tree Forest** – Binary tree terminology, Binary Search Tree (BST) property, search, insert, delete, and animated Inorder (sorted), Preorder, Postorder, and Level-Order traversals.
-- **World 8: Graph Galaxy** – Adjacency matrix vs adjacency list, Breadth-First Search (Queue), Depth-First Search (Stack), Dijkstra's Shortest Path with real-time distance relaxation, and Prim's Minimum Spanning Tree.
-- **Bonus World: Algorithm Arena** – Asymptotic notations (Big-O upper bound, Big-$\Omega$ lower bound, Big-$\Theta$ tight bound), Dynamic Programming (Top-Down Memoization vs Bottom-Up Tabulation), Two Pointers, and Sliding Window optimization ($O(n)$ vs $O(n^2)$).
+
+1. **World 1: Array Kingdom**
+   - Contiguous memory allocation and zero-indexed arithmetic: $\text{Addr}(i) = \text{Base} + (i \times \text{Size})$.
+   - $O(1)$ random access, insertion shift-right, and deletion compact-left.
+   - 2D Row-Major vs Column-Major address calculations.
+   - Trade-offs: Cache-locality advantages vs static size limitations.
+
+2. **World 2: Linked List Land**
+   - Node pointer mechanics (`data`, `next`, `prev`).
+   - Singly, Doubly, and Circular Linked List architectures.
+   - $O(1)$ prepend/head operations vs $O(n)$ search and traversal.
+   - 3-Pointer in-place list reversal (`prev`, `curr`, `next`).
+
+3. **World 3: Stack & Queue Dungeon**
+   - LIFO Stack operations: Push, Pop, Peek, Overflow, and Underflow.
+   - Infix-to-Postfix conversion using Dijkstra's Shunting-Yard algorithm.
+   - Postfix expression evaluation using an operand stack.
+   - FIFO Queue operations: Enqueue, Dequeue, and Circular Queue modulo wrapping: $\text{rear} = (\text{rear} + 1) \pmod m$.
+   - Double-Ended Queues (Deque) supporting push/pop at both boundaries.
+
+4. **World 4: Recursion & Backtracking**
+   - Base conditions and recursive decomposition.
+   - Call stack frame visualization and unwinding.
+   - Tower of Hanoi recurrence: $T(n) = 2T(n-1) + 1 \Rightarrow O(2^n)$ with $2^n - 1$ optimal moves.
+   - Backtracking and pruning in the N-Queens problem.
+
+5. **World 5: Sorting Speedway**
+   - Elementary $O(n^2)$ sorts: Bubble Sort, Selection Sort, and Insertion Sort.
+   - Algorithmic stability and in-place sorting definitions.
+   - Divide-and-conquer $O(n \log n)$ sorts: Merge Sort (split and merge) and Quick Sort (Lomuto partitioning).
+   - Step-by-step swap counters, comparison metrics, and speed throttles.
+
+6. **World 6: Searching & Hashing City**
+   - Linear Search $O(n)$ vs Binary Search $O(\log n)$ with low/mid/high pointer tracking.
+   - Hash functions: Division Modulo $h(k) = k \pmod m$.
+   - Load factor analysis: $\alpha = n / m$.
+   - Collision resolution: Separate Chaining (linked buckets) vs Open Addressing (Linear Probing, Quadratic Probing, Double Hashing).
+
+7. **World 7: Tree Forest**
+   - Tree hierarchies: Root, Parent, Child, Leaf, Depth, and Height.
+   - Binary Search Tree (BST) invariants (Left < Root $\le$ Right).
+   - BST Insertions, Deletions (handling 0, 1, or 2 children via inorder successor), and Searches.
+   - 4 Animated Traversals: Inorder (L-Root-R), Preorder (Root-L-R), Postorder (L-R-Root), and Level-Order BFS (Queue-based).
+
+8. **World 8: Graph Galaxy**
+   - Adjacency Matrices vs Adjacency Lists (density vs sparsity trade-offs).
+   - Breadth-First Search (BFS) using FIFO Queues.
+   - Depth-First Search (DFS) using LIFO Stacks / recursion.
+   - Dijkstra's Single-Source Shortest Path algorithm with real-time distance relaxation table.
+   - Prim's Minimum Spanning Tree (MST) cut property visualization.
+
+9. **Bonus Arena: Algorithm Arena**
+   - Asymptotic analysis: Big-O (Upper Bound), Big-$\Omega$ (Lower Bound), and Big-$\Theta$ (Tight Bound).
+   - Two Pointers & Sliding Window linear-time optimizations ($O(n)$ vs $O(n^2)$).
+   - Dynamic Programming: Top-Down Memoization vs Bottom-Up Tabulation for overlapping subproblems.
 
 ---
 
-### 2. 🔬 Interactive Data Structure Visualizers
-Real algorithmic state machines where every operation mutates real underlying state:
-- **Array Visualizer**: Insert and shift right, delete and compact left, linear search, binary search with active `low`/`mid`/`high` bounds, and direct index overwrite.
-- **Linked List Visualizer**: Singly, Doubly, and Circular views, insert at Head, insert at Tail, insert at Position $k$, and step-by-step list reversal.
-- **Stack Visualizer**: Vertical tube frame with animated push, pop, peek, top pointer tracking, overflow/underflow alerts, and Infix-to-Postfix conversion.
-- **Queue Visualizer**: Circular queue with modulo arithmetic index wrap-around and Deque insert/delete at both ends.
-- **Tree Visualizer**: Binary Search Tree with search path tracing, node deletion, and live traversal highlighting.
-- **Graph Visualizer**: Interactive network with BFS, DFS, Dijkstra single-source shortest paths, and Prim's MST.
-- **Sorting Visualizer**: Bar height visualizations with live comparison & swap metrics, play/pause controls, and $1\times/2\times/4\times$ speed options.
-- **Hashing Visualizer**: Division hash function, collision triggers, Separate Chaining linked lists, Linear Probing, Quadratic Probing, and Dynamic Rehashing when $\alpha > 0.75$.
+### 2. 🔬 8 Interactive Visualizers
+
+Real interactive visualizers where you manipulate data structures and observe real-time algorithmic reactions:
+- **Array Visualizer**: Insert & shift right, delete & compact left, linear search, binary search with low/mid/high pointers, $O(1)$ slot updates, and 2D row-major memory mapping.
+- **Linked List Visualizer**: Singly, Doubly, and Circular views, insert at HEAD, insert at TAIL, delete nodes, and step-by-step 3-pointer list reversal.
+- **Stack Visualizer**: Vertical tube frame with animated LIFO push, pop, peek, overflow alerts, Infix-to-Postfix conversion, and Postfix evaluation.
+- **Queue Visualizer**: Linear & circular buffer with FRONT and REAR pointer tracking, modulo wrap-around, and Double-Ended Queue (Deque) operations.
+- **Tree Visualizer**: BST node insertion, search path highlighting, deletion, and 4 animated traversals (Inorder, Preorder, Postorder, Level-Order).
+- **Graph Visualizer**: Interactive weighted network with step-by-step BFS queue playback, DFS stack traversal, Dijkstra shortest path with distance relaxation table, and Prim's MST.
+- **Sorting Visualizer**: Animated bar charts for Bubble, Selection, Insertion, Merge, and Quick Sort with comparisons, swaps, and speed controls.
+- **Hashing Visualizer**: Division modulo hashing, Separate Chaining buckets, Linear Probing, Quadratic Probing, and Dynamic Rehashing when $\alpha > 0.75$.
 
 ---
 
-### 3. 🕹️ Concept Mini-Games & Puzzles
-1. **The Missing Memory Slot**: Calculate missing values in contiguous memory slots.
-2. **Pointer Repair**: Reassemble detached nodes into a valid null-terminated linked list.
-3. **Pressure Gate**: Push and pop weights on a LIFO stack to balance the dungeon lock to 15.
-4. **FIFO Customer Dispatch**: Dequeue incoming buffer requests in strict arrival sequence.
-5. **Bubble Speedway Swap Predictor**: Compare adjacent elements and predict order swaps.
-6. **Inorder Traversal Hunter**: Click binary tree nodes in L-Root-R sequence to output sorted values.
-7. **Dijkstra Path Optimization**: Compare routes and calculate greedy edge relaxations.
-8. **Hash Slot Hunter**: Compute bucket indices via $k \pmod 7$.
-9. **Tower of Hanoi 3-Peg Puzzle**: Transfer 3 disks from Peg A to Peg C in 7 optimal moves without placing larger disks on smaller disks.
-10. **Big-O Speed Ranker**: Rank asymptotic complexities from fastest to slowest growth rates.
-11. **Fibonacci DP Tabulation**: Build $dp[i] = dp[i-1] + dp[i-2]$ in $O(n)$ linear time.
-12. **Sliding Window Maximum Sum**: Slide a $k=3$ window frame across an array to locate the maximum sum subarray.
+### 3. 🕹️ 12 Playable Concept Mini-Games
+
+Each mini-game reinforces core DSA principles through engaging arcade puzzles:
+1. **Missing Memory Slot**: Deduce the missing contiguous array index.
+2. **Pointer Repair**: Reconstruct broken linked list pointers to `NULL`.
+3. **Dungeon Pressure Gate**: Push/pop blocks onto a LIFO stack to hit target weight.
+4. **FIFO Customer Dispatch**: Process service queue requests in strict FIFO order.
+5. **Bubble Speedway Swap Predictor**: Compare adjacent values and predict swap operations.
+6. **Inorder Traversal Hunter**: Click nodes in L-Root-R order to generate sorted sequences.
+7. **Dijkstra's Path Optimization**: Evaluate routes and choose the true shortest path.
+8. **Hash Slot Hunter**: Calculate target modulo bucket index $k \pmod 7$.
+9. **Tower of Hanoi 3-Peg Puzzle**: Solve the 3-disk recursive puzzle without placing larger disks on smaller ones.
+10. **Big-O Speed Ranker**: Rank asymptotic complexities from lowest to highest cost.
+11. **Fibonacci DP Table Builder**: Build bottom-up tabulation $dp[i] = dp[i-1] + dp[i-2]$.
+12. **Sliding Window Maximum Sum**: Slide a $k=3$ window frame to locate maximum subarray sum.
 
 ---
 
 ### 4. 🎓 University Exam Arena
-- **Model Answers**: 2-Mark short definitions, 5-Mark differences & algorithms, and 10-Mark proofs with C/Python implementations, dry-run trace tables, and grading schemes.
-- **Timed Mock Exam**: 5-minute timed exam with 5 curriculum questions, instant score calculation, celebration effects, and XP rewards.
+
+Built specifically to prepare students for college and semester exams:
+- **Model Answers**: 2-Mark definitions, 5-Mark comparison tables, and 10-Mark comprehensive proofs.
+- **Complete Code Snippets**: Production C and Python implementations with step-by-step dry-run trace tables and ASCII architecture diagrams.
+- **5-Minute Timed Mock Exam**: Simulates formal semester examinations with instant grading, pass/fail thresholds, and XP rewards.
 
 ---
 
 ### 5. 💼 FAANG Technical Interview Arena
-- **5 Progressive Rounds**:
-  - Round 1: Online Assessment Screening
-  - Round 2: Core Data Structure Fluency
-  - Round 3: Algorithmic Problem Solving
-  - Round 4: Advanced Optimization & Trade-Offs
-  - Round 5: System Design & Complexity Analysis
-- **Progressive Hints**: Tiered hints without spoiling answers, full optimal C++ / Python code, and Big-O proofs.
+
+Simulate real coding interviews modeled after Google, Meta, Amazon, and Microsoft hiring loops:
+- **5 Progressive Rounds**: Online Assessment, Data Structures, Algorithmic Problem Solving, Advanced Optimization, and System Design & Complexities.
+- **Tier-1 Problem Sets**: Two Sum, Cycle Detection in Linked Lists, Longest Substring Without Repeating Characters, LRU Cache Design.
+- **Progressive Hint System**: 3 tiers of hints that guide intuition without spoiling answers.
+- **Optimal Solutions**: Complete code in C++ and Python with formal Time and Space Complexity proofs.
 
 ---
 
 ### 6. 💻 Multi-Language Code Lab
-- Integrated problem editor for classic algorithmic challenges (Two Sum, Valid Parentheses, Reverse Linked List, Binary Search, Climbing Stairs).
-- Multi-language starter code: **JavaScript**, **Python 3**, **Java**, and **C**.
-- Interactive test runner checking input/output test cases.
+
+- Built-in coding environment for practicing classic interview challenges.
+- Starter code templates in **JavaScript**, **Python 3**, **C**, and **Java**.
+- Integrated test case runner validating outputs against expected test constraints.
 
 ---
 
-### 7. 🧠 Smart Revision Center
-- **Weak Topics Diagnostic**: Calculates live percentage accuracy from quiz attempts.
-- **Neuro-Spaced Repetition Schedule**: Automated reminders for Day 1, Day 3, Day 7, and Day 14.
-- **One-Click Remediation**: Direct links to jump back to targeted worlds.
+### 7. 🧠 Smart Revision & Spaced Repetition
+
+- **Weak Topics Diagnostic**: Dynamically calculates topic accuracy based on your quiz and mission performance.
+- **Neuro-Spaced Repetition**: Automatic scheduling for Day 1, Day 3, Day 7, and Day 14 reviews.
+- **One-Click Remediation**: Directly links to the corresponding world to practice struggling topics.
 
 ---
 
-### 8. 📱 Mobile Responsive Gaming UI
-- Desktop left sidebar navigation with 12 distinct terminals.
-- Mobile bottom navigation bar + full slide-up drawer for accessing all 12 modules on smartphones and tablets.
-- Zero external audio assets: Web Audio API Synthesizer generating real-time clicks, coins, level-ups, successes, and error alerts.
+### 8. 🤖 ByteWise AI Learning Assistant
+
+- Pedagogical DSA tutor modal available from every screen.
+- Generates real-world analogies, step-by-step logic, edge case considerations, and intuition hints.
 
 ---
 
 ## 🛠️ Technology Stack
 
-| Layer | Technologies |
+| Component | Technologies |
 |---|---|
-| **Core Framework** | React 18, Vite |
-| **Styling & Theme** | Tailwind CSS, PostCSS, Autoprefixer, Custom Cyberpunk Theme |
-| **Icons & Media** | Lucide React |
-| **Charts & Analytics** | Recharts (Mastery Radar & Progression Analytics) |
-| **Visual Celebrations** | Canvas Confetti |
-| **Sound Synthesis** | Zero-dependency Web Audio API Synthesizer |
+| **Framework & Build** | React 18, Vite |
+| **Styling & UI** | Tailwind CSS, PostCSS, Autoprefixer, Custom Cyberpunk Palette |
+| **Icons** | Lucide React |
+| **Analytics & Charts** | Recharts (Mastery Radar & Progress Analytics) |
+| **Celebrations** | Canvas Confetti |
+| **Audio Synthesizer** | Zero-dependency Web Audio API Synthesizer |
 | **Persistence** | HTML5 LocalStorage |
 
 ---
 
 ## 🚀 Getting Started
 
-### Prerequisites
-- Node.js (v18.0 or higher recommended)
-- npm or pnpm
-
-### Installation
+### 1. Launching the Development Server
 
 ```bash
 # Clone the repository
@@ -170,19 +219,23 @@ cd dsa-quest
 # Install dependencies
 npm install
 
-# Start Vite development server
+# Start the Vite development server
 npm run dev
 ```
 
-The game will launch on **[http://localhost:5173/](http://localhost:5173/)**.
+Open **[http://localhost:5173/](http://localhost:5173/)** in your browser.
 
-### Production Build
+### 2. Building for Production
 
 ```bash
-# Compile and bundle with Vite
 npm run build
+```
 
-# Preview production build locally
+The optimized static production assets will be built into the `dist/` folder.
+
+### 3. Previewing the Production Build
+
+```bash
 npm run preview
 ```
 
@@ -190,10 +243,11 @@ npm run preview
 
 ## 🏆 Gamification Mechanics
 
-- **XP System**: Earn +20 XP for reading concepts, +25 XP for solving interactive missions, +15 XP for timed challenges, +50 XP for interview rounds, and +100 XP for passing mock exams.
+- **XP System**: Earn +20 XP for reading concepts, +25 XP for interactive missions, +15 XP for timed challenges, +50 XP for interview rounds, and +100 XP for passing mock exams.
 - **Rank Titles**: Progress from *Byte Initiate* $\rightarrow$ *Code Squire* $\rightarrow$ *Algorithm Knight* $\rightarrow$ *Data Sorcerer* $\rightarrow$ *Logic Grandmaster* $\rightarrow$ *Cyber Demigod*.
-- **Coins**: Earn coins to unlock hints, customize avatar skins, and claim daily rewards.
-- **13 Badges**: Collect Common, Rare, Epic, and Legendary achievements.
+- **Coins**: Earn coins to customize avatars, unlock hints, and claim daily rewards.
+- **13 Badges**: Unlock Common, Rare, Epic, and Legendary achievements.
+- **Daily Quests & Streaks**: Maintain active consecutive login streaks and complete daily missions.
 
 ---
 
